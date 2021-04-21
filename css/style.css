@@ -1,0 +1,270 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*無障礙*/
+a:focus{
+	border: 2px dashed #C90!important;
+	background-color: #FFDD57!important;
+	color: #000!important;
+}
+input:focus{
+	border: 2px dashed #C90!important;
+	background-color: #FFDD57!important;
+}
+
+button:focus{
+	border: 2px dashed #C90!important;
+	background-color: #FFDD57 !important;
+	color: #000!important;
+}
+
+
+        #AU[accesskey] {
+            color: #2B358C;
+            margin-left: -1.8rem;
+        }
+
+        #AU:focus {
+            color: #FFF;
+        }
+
+        #AC[accesskey] {
+	color: #333333;
+	line-height: 2rem;
+	margin-top: 0.313rem;
+        }
+
+#AC{
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	
+}
+        #AC:focus {
+            color: #000;
+        }
+
+        #AF[accesskey] {
+            color: #000;
+            margin-left: -1.8rem;
+        }
+
+        #AF:focus {
+            color: #FFF;
+        }
+
+#AZ[accesskey] {
+	color: #FFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*凸顯標題*/
+.title2{
+	font-weight: bold;
+	color: #00A2AE;
+}#site-content .container #example thead tr .center {
+	color: #000;
+	background-color: #99bfe6;
+}
+#header .navbar.navbar-icon-top.navbar-expand-lg.navbar-light.my-hearder .brand.brand-name.navbar-left {
+	margin-top: 10px;
+}
+
+/*表單title加粗*/
+label {
+	font-weight: bold;
+}
+.form-check-label{
+	font-weight: normal;
+}
+
+
+.ibbds{
+	position: absolute;
+	bottom: 30px;
+	text-align: center;
+	width: 100%;
+	padding-right: 5%;
+	padding-left: 5%;
+	font-weight: bold;
+	
+	
+}
+
+a .ibbds{color: #FFF;}
+a:focus .ibbds{
+	color: #000;
+}
+
+/*首頁icon*/
+.i_icon01{
+	background-color: #EEA651 ;
+}
+.i_icon02{
+	background-color: #9999CC ;
+}
+.i_icon03{
+	background-color: #669933 ;
+}
+.i_icon04{
+	background-color: #009999 ;
+}
+.i_icon05{
+	background-color: #996666;
+}
+.i_icon06{
+	background-color: #FF6600;
+}
+.i_icon07{
+	background-color: #0099CC ;
+}
+.i_icon08{
+	background-color: #FF99CC;
+}
+.i_icon09{
+	background-color: #33CC66;
+}
+.i_icon10{
+	background-color: #CB9866;
+}
+.i_icon11{
+	background-color: #993300;
+}
+
+
+
+.i_icon01:hover{
+	background-color: #F2C68E;
+}
+.i_icon02:hover{
+	background-color: #B4B4DA;
+}
+.i_icon03:hover{
+	background-color: #81BF42;
+}
+.i_icon04:hover{
+	background-color: #00C8C8;
+}
+.i_icon05:hover{
+	background-color: #A87D7D;
+}
+.i_icon06:hover{
+	background-color: #FF8A3C;
+}
+.i_icon07:hover{
+	background-color: #24C9FF;
+}
+.i_icon08:hover{
+	background-color: #FFBDDE;
+}
+.i_icon09:hover{
+	background-color: #77DD98;
+}
+.i_icon10:hover{
+	background-color: #D6AD85;
+}
+.i_icon11:hover{
+	background-color: #D54500;
+}
+
+
+
+
+.my-login-div2{
+	background-color: #FFF;
+	padding: 50px;
+	float: left;
+	width: 200px;
+	margin-left: 200px;
+}
+
+/*讓表格出現橫scroll*/
+.table_scroll .itable {
+	width: 100%;
+
+}
+
+/*問候bar*/
+.w_zx{
+	background-color: #005E65;
+	text-align: right;
+	padding-right: 25px;
+	padding-left: 25px;
+	color: #FFF;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/*footer title*/
+.text_ft{
+	font-size: 2em;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+/*login*/
+
+.form-signin {
+  width: 100%;
+  max-width: 530px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+/*按鈕間距*/
+.spacing_b .btn{
+	margin: 3px;
+}
+
+
+
+
+/*上間距*/
+.topmargin10{
+	margin-top: 10px;
+}#gotocenter {
+
+}
+
+
+
+.fa {
+	height: 16px;
+	width: 16px;
+}
+

@@ -1,0 +1,383 @@
+html {
+	background-color: #fdfdfd;
+}
+
+body {
+	height: 100%;
+	font-family: �L�n������;
+}
+
+#header {
+	top: 0px;
+	width: 100%;
+	/* height: 12%; */
+	/*position: fixed;*/
+	font-size: 1em;
+	font-weight: bolder;
+	color: #fff;
+	text-transform: uppercase;
+	background-color: #272727;
+	/*border-bottom: 2px solid hsl(180,70%,55%);*/
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	background-color: #272727;
+}
+
+#footer {
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	/*position: fixed;*/
+	font-size: 0.6em;
+	color: #fff;
+	text-transform: uppercase;
+	background-color: #09283b;
+	padding-top: 20px;
+	text-align: center;
+	display: grid;
+}
+
+#site-content {
+	width: 100%;
+	/*height: 100%;*/
+	overflow: auto;
+	float: left;
+	/*position: fixed;*/
+	min-height: 502px;
+	padding: 25px;
+	background-image: url(../img/background-3.jpg);
+	background-color: #edf7f9;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+.my-brand {
+	margin-left: 10px !important;
+}
+
+.my-hearder {
+	background-color: #00bdcb;
+}
+
+.logo {
+	display: block;
+	height: auto;
+	padding-top: 5px;
+	margin-right: 25px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+}
+
+.navbar-header h1 {
+	letter-spacing: 1px;
+}
+
+.color-white {
+	color: white;
+}
+
+.color-green {
+	color: green;
+}
+
+.color-red {
+	color: red;
+}
+
+.image img {
+	position: absolute;
+}
+
+.fun_div {
+	width: 14em !important;
+	cursor: pointer;
+}
+
+.fun_div:hover {
+	box-shadow: 0px 0px 5px 3px #9c9c8a;
+}
+
+.fun_text_div {
+	padding: 0%;
+}
+
+
+.fun-text {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 34%;
+	color: #fff;
+}
+
+
+.full-width {
+	width: 100%;
+}
+
+.full-height {
+	height: 100%;
+}
+
+.my-form-group {
+	width: 100%;
+	padding: 10px;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.left {
+	text-align: left;
+}
+
+.modal_sel_box {
+	width: 100%;
+}
+
+.modal_sel_box>option:hover {
+	background-color: #00bdcb;
+}
+
+/* bootstrap 套件覆蓋 */
+.navbar-icon-top .navbar-nav .nav-link>.fa {
+	position: relative;
+	width: 36px;
+	font-size: 24px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link>.fa>.badge {
+	font-size: 0.75rem;
+	position: absolute;
+	right: 0;
+	font-family: sans-serif;
+}
+
+.navbar-icon-top .navbar-nav .nav-link>.fa {
+	top: 3px;
+	line-height: 12px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link>.fa>.badge {
+	top: -10px;
+}
+
+@media (min-width: 576px) {
+	.navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link {
+		text-align: center;
+		display: table-cell;
+		height: 70px;
+		vertical-align: middle;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link>.fa {
+		display: block;
+		width: 48px;
+		margin: 2px auto 4px auto;
+		top: 0;
+		line-height: 24px;
+	}
+
+	.navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link>.fa>.badge {
+		top: -7px;
+	}
+}
+
+@media (min-width: 768px) {
+	.navbar-icon-top.navbar-expand-md .navbar-nav .nav-link {
+		text-align: center;
+		display: table-cell;
+		height: 70px;
+		vertical-align: middle;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.navbar-icon-top.navbar-expand-md .navbar-nav .nav-link>.fa {
+		display: block;
+		width: 48px;
+		margin: 2px auto 4px auto;
+		top: 0;
+		line-height: 24px;
+	}
+
+	.navbar-icon-top.navbar-expand-md .navbar-nav .nav-link>.fa>.badge {
+		top: -7px;
+	}
+}
+
+@media (min-width: 992px) {
+	.navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
+		text-align: center;
+		display: table-cell;
+		height: 70px;
+		vertical-align: middle;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link>.fa {
+		display: block;
+		width: 48px;
+		margin: 2px auto 4px auto;
+		top: 0;
+		line-height: 24px;
+	}
+
+	.navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link>.fa>.badge {
+		top: -7px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link {
+		text-align: center;
+		display: table-cell;
+		height: 70px;
+		vertical-align: middle;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link>.fa {
+		display: block;
+		width: 48px;
+		margin: 2px auto 4px auto;
+		top: 0;
+		line-height: 24px;
+	}
+
+	.navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link>.fa>.badge {
+		top: -7px;
+	}
+}
+
+@media (min-width: 768px) {
+	.form-group.row>.col-form-label {
+		text-align: right;
+	}
+
+	.form-group.row>.col-nextline {
+		margin-top: 1rem;
+	}
+}
+
+.tab-pane {
+	padding: 20px;
+}
+
+/* jquery ui datePicker */
+.ui-datepicker-year {
+	width: 62% !important;
+}
+
+.ui-datepicker-month {
+	width: 38% !important;
+}
+
+/* bootstrap breadcrumb */
+.breadcrumb {
+	background-color: transparent;
+}
+
+.my-append-div {
+	display: block !important;
+}
+
+
+/*table 資訊表單style*/
+.my-table-info {
+	border: 1px 2px solid #d8d8d8;
+
+}
+
+@media (min-width:766px){
+
+.my-table-info {
+	
+	table-layout: fixed;
+}
+
+}
+
+
+.my-table-info th {
+	text-align: center;
+	font-weight: bold;
+	color: #000;
+	background-color: #99bfe6;
+	border-collapse: collapse;
+}
+
+.my-table-info td {
+	overflow-wrap: break-word;
+}
+
+.my-title-div .my-title-right button {
+	float: right;
+}
+
+.my-table-info tr:nth-child(even) {
+	background: #ebf2fa;
+}
+
+.my-table-info tr:nth-child(odd) {
+	background: #FFF;
+}
+
+.table thead th {
+    vertical-align: middle;
+    border-bottom: 2px solid #dee2e6;
+}
+/*自定義寬度*/
+.my-table-info .w-10{
+	width:10%;
+}
+.my-table-info .w-15{
+	width:15%;
+}
+.my-table-info .w-22{
+	width:22%;
+}
+
+/* 書狀類型tr字色 */
+.tr-skd-1{
+	color: red;
+}
+
+.tr-skd-2{
+	color: blue;
+}
+
+.tr-skd-3{
+	color: green;
+}
+
+/* button調整 */
+.my-btn, .my-btn-text {
+	margin-right: 5px;
+}
+
+.my-btn-text i::before {
+	padding-right: 3px;
+}
+
+/* 登入頁面 */
+.my-login-div{
+	position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    padding: 20px 45px 45px 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 5px 5px 0 rgb(0 0 0 / 24%);
+}

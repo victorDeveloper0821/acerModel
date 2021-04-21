@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+.brand-name{
+	font-size: 1rem;
+	text-align: left;
+}
+.navbar-brand img{
+	height: 30px;
+	width: 30px;
+}
+
+
+#header .navbar.navbar-icon-top.navbar-expand-lg.navbar-light.my-hearder .navbar-brand.logo.my-brand {
+	margin: 0px;
+	padding: 0px;
+}
+.logo{width: 30px;}
+
+
+/*讓表格出現橫scroll*/
+.table_scroll {
+	overflow: auto;
+}
+.table_scroll2 {
+	overflow: auto;
+	width: 100%;
+}
+
+.table_scroll .itable {
+	width: 700px;
+}
+.table_scroll2 .itable {
+	float: left;
+}
+
+/*step*/
+
+.bs-stepper {
+	display: inline-block;
+	padding-right: 0px!important;
+	padding-left: 0px!important;
+	padding-bottom: 20px;
+	}
+	
+	#site-content .container .bs-stepper .bs-stepper-header .step{
+	width: 50%!important;
+	
+	float: left;
+}
+	#site-content .container .bs-stepper .bs-stepper-header .line{
+	display: none 
+}
+
+.bs-stepper .step-trigger{
+
+	padding: 5px!important;
+}
