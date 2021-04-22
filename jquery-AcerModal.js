@@ -56,7 +56,7 @@ $.fn.acerModal = function acerModal (option){
                 $option = $("<option value='" + item.value + "'>" + item.name + "</option>");
                 $option.off().on('click',function(){
                     console.log("value: "+$(this).val());
-                    $this.$modalCloseBtb.click();
+                    $this.close();
                 });
                 $select.append($option);
             });
@@ -66,26 +66,33 @@ $.fn.acerModal = function acerModal (option){
         }else if(this.option.type == 'file'){
             var $form = $("<form id='uploadForm'></form>");
             this.option.data.forEach(function(obj){
-				let $input = $("<input></input>");
+				let $input = $("<input class='form-control'></input>");
 				let $div = $('<div class="form-group row"></div>');
+                let $colSm = $("<div class='col-sm-10'></div>")
 				let $label = $('<label></label>');
-				$label.attr('for',obj.name);
+				$label.attr('for',obj.path);
 				$input.attr('type',obj.type);
-				$input.attr('name',obj.name);
-				$input.attr('value',obj.value);
+				$input.attr('name',obj.path);
+                $label.text(obj.label);
+                $label.addClass("col-sm-10");
+                if(obj.value != null){
+                    $input.attr('value',obj.value);
+                }
 				if(obj.type != 'hidden'){
-					$div.append($label,$input)
+                    $colSm.append($input);
+					$div.append($label,$colSm)
 					$form.append($div)
 				}else{
 					$form.append($input)
 				}
 			})
-			submit = $("<button class='btn btn-primary' type='submit'></button>");
+			submit = $("<button class='btn btn-primary' type='button'></button>").text("上傳檔案");
 			submit.off().on('click',function(){
 				if(typeof $this.option.dataCallback === "function"){
 					$this.option.dataCallback();
 				}
 				console.log('callback function');
+                $this.close();
 			})
 			$form.append(submit);
 			this.$modalBody.append($form)
@@ -97,6 +104,12 @@ $.fn.acerModal = function acerModal (option){
         
         this.$dialog.append(this.$content);
         $(this.that).append(this.$dialog);
+    }
+
+    acerModal.prototype.close = function(){
+        $(this.that).removeClass("show");
+        $("div.modal-backdrop").remove();
+        $(this.that).hide();
     }
     var instance = new acerModal(this,option);
     return instance;

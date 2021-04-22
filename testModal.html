@@ -1,30 +1,75 @@
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="./css/jquery-ui.min.css"/>
-		<title>測試彈窗</title>
-		<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
-		<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="./js/Popper.js"></script>
-		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="./jquery-AcerModal.js"></script>
-		<script type="text/javascript">
-		$(document).ready(function(){
+
+<head>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/app.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/mobile.css"/>
+	<title>測試彈窗</title>
+	<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./js/Popper.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./jquery-AcerModal.js"></script>
+	
+	<script type="text/javascript">
+		var demo = [
+			{
+				"type": "hidden", // input type
+				"path": "ftype", // input name
+				"value": "HAP" // input value
+				
+			},
+			{
+				"type": "hidden", // input type
+				"path": "cno", // input name
+				"value": "110041909552600054" // input value
+			},
+			{
+				"type": "file", // input type
+				"path": "file", // input name
+				"value": "", // input value
+				"label":"檔案上傳"
+			},
+			{
+				"type": "text", // input type
+				"path": "description", // input name
+				"value": "", // input value
+				"label":"檔案描述"
+			}
+		]
+		$(document).ready(function () {
 			var option = {};
 			$modal = $('div#test').acerModal(option);
 			$modal.drawModal();
+
+			var option2 = {
+				"title": "上傳檔案彈窗",
+				"type": "file",
+				"data": demo
+			}
+			$formModal = $('div#upload').acerModal(option2)
+			$formModal.drawModal();
 		});
-		</script>
-	</head>
+	</script>
+</head>
 
-	<body>
-		<h1>彈窗測試</h1>
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#test">
-			Open modal
-		  </button>
-		<div class="modal fade" id="test"></div>
+<body>
+	<h1>彈窗測試</h1>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#test">
+		Open SelectBox modal
+	</button>
 
-	</body>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#upload">
+		Open Upload Form modal
+	</button>
+	<div class="modal fade" id="test"></div>
+
+	<div class="modal fade" id="upload"></div>
+
+
+</body>
 
 
 </html>
