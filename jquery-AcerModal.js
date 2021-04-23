@@ -26,13 +26,14 @@ $.fn.acerModal = function acerModal (option){
     };
     
     function acerModal(element,option){
-        this.that = $(element);
         this.option = $.extend({}, defaultOption, option || {});
+        this.drawModal(element);
     }
     
     // 畫出Modal彈窗頁面
-    acerModal.prototype.drawModal = function(){
-        $this = $(this)[0];
+    acerModal.prototype.drawModal = function(element){
+        $this = this;
+        var dom = getElement(element)
         this.$dialog = $('<div class="modal-dialog"></div>')
         this.$content = $('<div class="modal-content"></div>')
         // modal header
@@ -51,21 +52,46 @@ $.fn.acerModal = function acerModal (option){
 
         // generate body by type
         if( this.option.type == 'selectbox'){
-            var $select = $("<select size='10' class='modal_sel_box'></select>");
-            this.option.data.forEach(function(item){
-                $option = $("<option value='" + item.value + "'>" + item.name + "</option>");
-                $option.off().on('click',function(){
-                    console.log("value: "+$(this).val());
-                    $this.close();
-                });
-                $select.append($option);
-            });
-            
-            this.$modalBody.append($select)
+            drawSelectBox($this,dom);
         
         }else if(this.option.type == 'file'){
-            var $form = $("<form id='uploadForm'></form>");
-            this.option.data.forEach(function(obj){
+            drawUploadForm($this,dom)
+        }
+
+        this.$content.append(this.$modalHeader);
+        this.$content.append(this.$modalBody);
+        
+        
+        this.$dialog.append(this.$content);
+        $(dom).append(this.$dialog);
+    }
+
+    acerModal.prototype.close = function(ele){
+        $(ele).modal('hide');
+    }
+
+    function getElement(element){
+        return $(element);
+    }
+
+    function drawSelectBox($this,dom){
+        var $select = $("<select size='10' class='modal_sel_box'></select>");
+        $this.option.data.forEach(function(item){
+            $option = $("<option value='" + item.value + "'>" + item.name + "</option>");
+            $option.off().on('click',function(){
+                console.log("value: "+$(this).val());
+                $this.close(dom);
+                clear($this);
+            });
+            $select.append($option);
+        });
+        
+        $this.$modalBody.append($select)
+    }
+
+    function drawUploadForm($this,dom){
+        var $form = $("<form id='uploadForm'></form>");
+        $this.option.data.forEach(function(obj){
 				let $input = $("<input class='form-control'></input>");
 				let $div = $('<div class="form-group row"></div>');
                 let $colSm = $("<div class='col-sm-10'></div>")
@@ -92,25 +118,27 @@ $.fn.acerModal = function acerModal (option){
 					$this.option.dataCallback();
 				}
 				console.log('callback function');
-                $this.close();
+                $this.close(dom);
+                clear($this);
 			})
 			$form.append(submit);
-			this.$modalBody.append($form)
+			$this.$modalBody.append($form)
+    }
+
+    function clear($this){
+        $this.$modalBody.html('');
+    }
+    // data - 更新後的data
+    acerModal.prototype.refresh= function(data,dom){
+        var $this = this;
+        var type = $this.option.type;
+        if(type == 'selectbox'){
+
+        }else if(type == 'file'){
+
         }
 
-        this.$content.append(this.$modalHeader);
-        this.$content.append(this.$modalBody);
-        
-        
-        this.$dialog.append(this.$content);
-        $(this.that).append(this.$dialog);
     }
-
-    acerModal.prototype.close = function(){
-        $(this.that).removeClass("show");
-        $("div.modal-backdrop").remove();
-        $(this.that).hide();
-    }
-    var instance = new acerModal(this,option);
-    return instance;
+    
+    return new acerModal(this,option);
 }
