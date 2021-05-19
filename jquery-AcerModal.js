@@ -5,10 +5,10 @@ $.fn.acerModal = function acerModal (option){
         "height": '100px',
         "width": '150px',
         "type": "selectbox", // 彈窗類型: 下拉選單(selectbox), 上傳檔案表單(file)
-        "open": function(event,ui){
+        "open": function(){
             console.log('開啟彈窗');
         },
-        "close": function(event,ui){
+        "close": function(){
             console.log('關閉彈窗');
         },
         "data":[
@@ -19,26 +19,33 @@ $.fn.acerModal = function acerModal (option){
             {"value":"5","name":"efg"},
             {"value":"6","name":"fgh"}
         ],
-        "dataCallback":function(){
-            console.log('data callback events');
-        },
-		"callbackUrl":""
+        "dataCallback":function(val){
+            console.log('data callback events:'+val);
+        }
     };
     
     function acerModal(element,option){
         this.option = $.extend({}, defaultOption, option || {});
-        this.drawModal(element);
+        this.ele = $(element);
+        initialize(this);
+ //       this.drawModal();
+        
+    }
+    // 進行初始化彈窗
+    function initialize($this){
+        $this.$dialog = $('<div class="modal-dialog"></div>').empty()
+        $this.$content = $('<div class="modal-content"></div>').empty()
+        $this.$modalHeader = $('<div class="modal-header"></div>').empty();
+        $this.$modalTitle = $('<h4 class="modal-title"></h4>').empty()
+        $this.$modalBody = $('<div class="modal-body"></div>').empty();
+        $this.$modalCloseBtb = $('<button type="button" class="close" data-dismiss="modal"></button>').empty()
     }
     
     // 畫出Modal彈窗頁面
-    acerModal.prototype.drawModal = function(element){
-        $this = this;
-        var dom = getElement(element)
-        this.$dialog = $('<div class="modal-dialog"></div>')
-        this.$content = $('<div class="modal-content"></div>')
+    acerModal.prototype.drawModal = function(){
+        let $this = this;
+        var dom = $this.ele;
         // modal header
-        this.$modalHeader = $('<div class="modal-header"></div>');
-        
         this.$modalTitle = $('<h4 class="modal-title"></h4>').text(this.option.title)
         this.$modalCloseBtb = $('<button type="button" class="close" data-dismiss="modal"></button>').text('X')
         this.$modalCloseBtb.on('click',function(e1, e2){
@@ -47,8 +54,6 @@ $.fn.acerModal = function acerModal (option){
             }
         })
         this.$modalHeader.append(this.$modalTitle,this.$modalCloseBtb);
-        
-        this.$modalBody = $('<div class="modal-body"></div>');
 
         // generate body by type
         if( this.option.type == 'selectbox'){
@@ -129,11 +134,29 @@ $.fn.acerModal = function acerModal (option){
         $this.$modalBody.html('');
     }
     // data - 更新後的data
-    acerModal.prototype.refresh= function(data,dom){
+    acerModal.prototype.refresh= function(data,type,callback){
         var $this = this;
-        var type = $this.option.type;
+        //var type = $this.option.type;
         if(type == 'selectbox'){
-
+            $this.$modalBody.empty();
+            let $select = $("<select size='10' class='modal_sel_box'></select>");
+            if(data instanceof Array){
+                data.forEach(function(item,idx){
+                    let $option = $("<option value='" + item.value + "'>" + item.name + "</option>");
+                    $option.off().on('click',function(){
+                        let val = $(this).val();
+                        console.log("value: "+ val);
+                        if(typeof callback ==="function" && callback != null){
+                            callback(val);
+                        }
+                        $this.option.dataCallback(val);
+                        $this.close($this.ele);
+                        clear($this);
+                        });
+                    $select.append($option);
+                });
+            }
+            $this.$modalBody.append($select);
         }else if(type == 'file'){
 
         }

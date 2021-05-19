@@ -43,31 +43,49 @@
 			var option = {};
 			var $modal = $('div#test').acerModal(option);
 			$modal.drawModal();
+			$('#selectBox').on('click',function(){
+				let datas = [
+            {"value":"a","name":"aa"},
+            {"value":"b","name":"bcssd"},
+            {"value":"c","name":"cde"},
+            {"value":"d","name":"ccee"},
+            {"value":"e","name":"efxxg"},
+            {"value":"f","name":"fgbbh"},
+			{"value":"f33","name":"3ffjf3"}
+        ]
+			$modal.refresh(datas,'selectbox',function(i){
+				$("h3#target").text(i);
+			});
 
+			})
+/*
 			var option2 = {
 				"title": "上傳檔案彈窗",
 				"type": "file",
 				"data": demo
 			}
 			var $formModal = $('div#upload').acerModal(option2)
-			$formModal.drawModal();
+			$formModal.drawModal();*/
 		});
+
+
 	</script>
 </head>
 
 <body>
 	<h1>彈窗測試</h1>
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#test">
+	<button type="button" id="selectBox" class="btn btn-primary" data-toggle="modal" data-target="#test">
 		Open SelectBox modal
 	</button>
-
+<!--
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#upload">
 		Open Upload Form modal
-	</button>
+	</button>-->
 	<div class="modal fade" id="test"></div>
-
+	<h3 id="target"></h3>
+<!--
 	<div class="modal fade" id="upload"></div>
-
+-->
 
 </body>
 
