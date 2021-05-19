@@ -58,14 +58,17 @@
 			});
 
 			})
-/*
+
 			var option2 = {
 				"title": "上傳檔案彈窗",
 				"type": "file",
 				"data": demo
 			}
 			var $formModal = $('div#upload').acerModal(option2)
-			$formModal.drawModal();*/
+			$formModal.drawModal();
+			$("#uploadForm").on('click',function(){
+				$formModal.refresh(demo,'file');
+			})
 		});
 
 
@@ -77,15 +80,14 @@
 	<button type="button" id="selectBox" class="btn btn-primary" data-toggle="modal" data-target="#test">
 		Open SelectBox modal
 	</button>
-<!--
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#upload">
+
+	<button type="button" id="uploadForm" class="btn btn-primary" data-toggle="modal" data-target="#upload">
 		Open Upload Form modal
-	</button>-->
+	</button>
 	<div class="modal fade" id="test"></div>
 	<h3 id="target"></h3>
-<!--
+
 	<div class="modal fade" id="upload"></div>
--->
 
 </body>
 
